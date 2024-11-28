@@ -282,7 +282,7 @@ public class BookingFrame_seat extends JFrame {
 		btnChangingSeat.setForeground(new Color(148, 14, 34));
 		btnChangingSeat.setFont(new Font("Alkatra", Font.PLAIN, 12));
 		
-		System.out.println(isFromBookingInfoFrame);
+		
 		if(isFromBookingInfoFrame==false) {
 			panelBooking.add(btnBooking);
 		}
