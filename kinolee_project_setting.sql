@@ -97,6 +97,9 @@ insert into movies (movie_id, movie_title, movie_director, movie_release, movie_
     values('m5','모아나2','데이브 데릭 주니어','2024/11/27','posters/Moana2.jpg');
 insert into movies (movie_id, movie_title, movie_director, movie_release, movie_poster)
     values('m6','글래디에이터2','리들리 스콧','2024/11/13','posters/GA.jpg');
+insert into movies (movie_id, movie_title, movie_director, movie_release, movie_poster)
+    values('m7','베놈 라스트댄스','켈리 마르셀','2024/10/23','posters/venom.jpg');
+
 
 --SCREENS
 insert into screens (screen_id, screen_name) 
@@ -163,6 +166,46 @@ insert into screenings (screening_id, movie_id, screening_date, screening_time, 
     values('m7s1','m6','2024/12/03','15:00','s1');
 insert into screenings (screening_id, movie_id, screening_date, screening_time, screen_id)
     values('m8s1','m6','2024/12/04','11:00','s1');
+insert into screenings (screening_id, movie_id, screening_date, screening_time, screen_id)
+    values('m9s1','m7','2026/12/04','09:00','s1');
+insert into screenings (screening_id, movie_id, screening_date, screening_time, screen_id)
+    values('m10s1','m7','2024/12/04','09:00','s1');
+insert into screenings (screening_id, movie_id, screening_date, screening_time, screen_id)
+    values('m11s1','m6','2024/12/04','11:00','s1');   
+insert into screenings (screening_id, movie_id, screening_date, screening_time, screen_id)
+    values('m12s1','m7','2024/12/05','09:00','s1');
 
-    
+/*
+* alter
+*/
+
+alter table users rename constraint SYS_C008337 to nn_users_user_password;
+alter table users rename constraint SYS_C008338 to pk_users_user_id;
+alter table users rename constraint SYS_C008339 to unique_users_uers_email;
+
+alter table movies rename constraint SYS_C008377 to nn_movies_movie_title;
+alter table movies rename constraint SYS_C008378 to nn_movies_movie_director;
+alter table movies rename constraint SYS_C008379 to pk_movies_movie_id;
+
+alter table screenings rename constraint SYS_C008384 to pk_screenings_screening_id;
+alter table screenings rename constraint SYS_C008385 to fk_screenings_movie_id;
+alter table screenings rename constraint SYS_C008386 to fk_screenings_screen_id;
+
+alter table screens rename constraint SYS_C008380 to pk_screens_screen_id;
+alter table screens rename constraint SYS_C008381 to unique_screens_screen_name;
+
+alter table seats_s1 rename constraint SYS_C008382 to pk_seats_s1_seat_id;
+alter table seats_s1 rename constraint SYS_C008383 to fk_seats_s1_screen_id;
+
+alter table seats_s1_status rename constraint SYS_C008387 to nn_seats_s1_status_is_reserved;
+alter table seats_s1_status rename constraint SYS_C008388 to pk_seats_s1_status_screening_id_seat_id;
+alter table seats_s1_status rename constraint SYS_C008389 to fk_seats_s1_status_screen_id;
+alter table seats_s1_status rename constraint SYS_C008390 to fk_seats_s1_status_screening_id;
+
+alter table booking_status rename constraint SYS_C008391 to nn_booking_status_booking_id;
+alter table booking_status rename constraint SYS_C008393 to fk_booking_status_user_id;
+alter table booking_status rename constraint SYS_C008394 to fk_booking_status_screening_id;
+alter table booking_status rename constraint SYS_C008395 to fk_booking_status_screen_id;
+alter table booking_status rename constraint SYS_C008396 to fk_booking_status_seat_id; 
+
 commit;
