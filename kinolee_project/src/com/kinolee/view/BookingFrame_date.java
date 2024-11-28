@@ -164,6 +164,7 @@ public class BookingFrame_date extends JFrame {
 	private void checkFinal() {
 		getSelectedHeadCounts();
 		BookingFrame_seat.showBookingFrame_seat(parentComponent,screening,selectedHeadCounts,user,false,null,null);
+		dispose();
 	}
 	
 	private void getSelectedHeadCounts() {
