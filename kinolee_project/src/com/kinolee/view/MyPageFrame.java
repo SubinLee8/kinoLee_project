@@ -81,7 +81,11 @@ public class MyPageFrame extends JFrame {
 		JButton btnCheckBooking = new JButton("Check/Cancel/Update Booking");
 		btnCheckBooking.setForeground(new Color(148, 14, 34));
 		btnCheckBooking.setFont(new Font("Alkatra", Font.PLAIN, 12));
-		btnCheckBooking.addActionListener(e->BookingInfoFrame.showBookingInfoFrame(parentComponent, user, app));
+		btnCheckBooking.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BookingInfoFrame.showBookingInfoFrame(parentComponent, user, app);
+				dispose();
+			}});
 		btnCheckBooking.setBounds(160, 181, 183, 23);
 		contentPane.add(btnCheckBooking);
 		

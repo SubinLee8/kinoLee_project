@@ -148,6 +148,7 @@ public class BookingInfoFrame extends JFrame {
 			String screeningId=myBooking.getScreeningId();
 			Screening screening=getScreeningInstance(screeningId);
 			BookingFrame_seat.showBookingFrame_seat(parentComponent, screening, 1, user, true, bookingId, seatId);
+			dispose();
 		}
 		
 	}
@@ -184,6 +185,7 @@ public class BookingInfoFrame extends JFrame {
 			int result2=bookingDao.deleteBookingHistory(bookingId);
 			if(result2==1) {
 				app.bookingUpdateSuccess();
+				dispose();
 			}
 			else{
 				JOptionPane.showMessageDialog(parentComponent, "예매 취소 실패","error",JOptionPane.ERROR_MESSAGE);
