@@ -274,7 +274,7 @@ public class BookingFrame_seat extends JFrame {
 		btnBooking.setFont(new Font("Alkatra", Font.PLAIN, 12));
 		btnBooking.addActionListener(e -> checkHeadCount());
 		btnBooking.setBounds(320, 31, 124, 23);
-		panelBooking.add(btnBooking);
+	
 		
 		btnChangingSeat = new JButton("Change Seats");
 		btnChangingSeat.setBounds(349, 41, 95, 23);
@@ -282,7 +282,7 @@ public class BookingFrame_seat extends JFrame {
 		btnChangingSeat.setForeground(new Color(148, 14, 34));
 		btnChangingSeat.setFont(new Font("Alkatra", Font.PLAIN, 12));
 		
-		
+		System.out.println(isFromBookingInfoFrame);
 		if(isFromBookingInfoFrame==false) {
 			panelBooking.add(btnBooking);
 		}
@@ -318,7 +318,7 @@ public class BookingFrame_seat extends JFrame {
 			JOptionPane.showMessageDialog(parentComponent, "1개의 좌석을 선택해야합니다.", "error", JOptionPane.ERROR_MESSAGE);
 			return;
 		} else {
-			int confirm=JOptionPane.showConfirmDialog(parentComponent, "선택한 좌석:" + clickedButtonId + " " + "예매하시겠습니까?");
+			int confirm=JOptionPane.showConfirmDialog(parentComponent, "선택한 좌석:" + clickedButtonId + " " + "바꾸시겠습니까?");
 			if(confirm==JOptionPane.YES_OPTION) {
 				int result1=seatsStatusDao.changeHistory(screening,seatId,newSeatId);
 				if(result1==-1) {
