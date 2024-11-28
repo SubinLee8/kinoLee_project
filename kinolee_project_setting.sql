@@ -167,17 +167,17 @@ insert into screenings (screening_id, movie_id, screening_date, screening_time, 
 insert into screenings (screening_id, movie_id, screening_date, screening_time, screen_id)
     values('m8s1','m6','2024/12/04','11:00','s1');
 insert into screenings (screening_id, movie_id, screening_date, screening_time, screen_id)
-    values('m9s1','m7','2026/12/04','09:00','s1');
-insert into screenings (screening_id, movie_id, screening_date, screening_time, screen_id)
-    values('m10s1','m7','2024/12/04','09:00','s1');
-insert into screenings (screening_id, movie_id, screening_date, screening_time, screen_id)
-    values('m11s1','m6','2024/12/04','11:00','s1');   
+    values('m9s1','m7','2026/12/04','09:00','s1');  
 insert into screenings (screening_id, movie_id, screening_date, screening_time, screen_id)
     values('m12s1','m7','2024/12/05','09:00','s1');
-
+    
+    
+    
 /*
 * alter
 */
+alter table screenings add constraint unique_screening_date_screening_time_screenings 
+    unique(screening_date,screening_time);
 
 alter table users rename constraint SYS_C008337 to nn_users_user_password;
 alter table users rename constraint SYS_C008338 to pk_users_user_id;
