@@ -268,7 +268,7 @@ public class BookingFrame_seat extends JFrame {
 		panelBooking.setBounds(12, 281, 456, 63);
 		contentPane.add(panelBooking);
 		panelBooking.setLayout(null);
-
+		
 		btnBooking = new JButton("Book Tickets");
 		btnBooking.setForeground(new Color(148, 14, 34));
 		btnBooking.setFont(new Font("Alkatra", Font.PLAIN, 12));
